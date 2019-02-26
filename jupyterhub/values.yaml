@@ -3,9 +3,7 @@ custom: {}
 hub:
   service:
     type: ClusterIP
-    annotations:
-      prometheus.io/scrape: 'true'
-      prometheus.io/path: /hub/metrics
+    annotations: {}
     ports:
       nodePort:
     loadBalancerIP:
@@ -123,8 +121,8 @@ proxy:
       cert:
     secret:
       name: ''
-      key: 'tls.key'
-      crt: 'tls.crt'
+      key: tls.key
+      crt: tls.crt
     hosts: []
   networkPolicy:
     enabled: false
@@ -184,7 +182,7 @@ singleuser:
   events: true
   extraAnnotations: {}
   extraLabels:
-    hub.jupyter.org/network-access-hub: "true"
+    hub.jupyter.org/network-access-hub: 'true'
   extraEnv: {}
   lifecycleHooks:
   initContainers: []
