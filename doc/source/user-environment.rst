@@ -138,7 +138,7 @@ by the Helm chart.
    # https://github.com/jupyter/docker-stacks/tree/master/minimal-notebook/Dockerfile
 
    # install additional package...
-   RUN pip install --yes astropy
+   RUN pip install --no-cache-dir astropy
 
 .. note:
 
@@ -314,7 +314,7 @@ configuration options passed to the `profileList` configuration will
 overwrite the defaults in Kubespawner (or any configuration you've
 added elsewhere in your helm chart).
 
-Profiles are stored under ``singluser.profileList``, and are defined as
+Profiles are stored under ``singleuser.profileList``, and are defined as
 a list of profiles with specific configuration options each. Here's an example:
 
 .. code-block:: yaml
